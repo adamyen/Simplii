@@ -18,6 +18,7 @@ jobs:
       - name: Test
         run: |
           CVPKG=$(go list ./... | grep -v mocks | tr '\n' ',')
+          go mod init
           go test -coverpkg=${CVPKG} -coverprofile=coverage.out -covermode=count  ./...
       - name: Setup gcloud cli
         uses: google-github-actions/setup-gcloud@master
