@@ -17,8 +17,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Test
         run: |
-          git init
-          git remote add origin https://github.com/adamyen/Simplii
           go mod init
           CVPKG=$(go list ./... | grep -v mocks | tr '\n' ',')
           go test -coverpkg=${CVPKG} -coverprofile=coverage.out -covermode=count  ./...
