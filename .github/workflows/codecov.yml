@@ -19,7 +19,7 @@ jobs:
         run: |
           go mod init github.com/adamyen/Simplii
           CVPKG=$(go list ./... | grep -v mocks | tr '\n' ',')
-          go test -coverpkg=${CVPKG} -coverprofile=coverage.out -covermode=count  ./...
+          go test -coverpkg=${CVPKG} -coverprofile=coverage.out -covermode=count  ./UnitTests
       - name: Setup gcloud cli
         uses: google-github-actions/setup-gcloud@master
         with:
