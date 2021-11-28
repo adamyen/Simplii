@@ -6,4 +6,4 @@ cov.load()
 with open(os.devnull, "w") as f:
     total = cov.report(file=f)
 
-print("Total: {0:.0f}".format(total))
+print("{0:.0f}%".format(total))

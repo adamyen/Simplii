@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - codecoverage
   pull_request:
     branches:
       - main
