@@ -20,8 +20,8 @@ jobs:
         id: codecov
         run: |
           coverage run -m pytest
-          echo ::set-output name=TOTAL::$(`python ./CodeCoverage/code_coverage.py`)
-          echo "TOTAL=84" >> $GITHUB_ENV
+          total=`python ./CodeCoverage/code_coverage.py`
+          echo "TOTAL=${total)" >> $GITHUB_ENV
       - name: Create Awesome Badge
         uses: schneegans/dynamic-badges-action@v1.1.0
         with:
