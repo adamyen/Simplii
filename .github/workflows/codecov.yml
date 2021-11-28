@@ -16,10 +16,17 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Run tests with pytest and create code coverage report
+      - name: Run tests with pytest and create code coverage badge
         run: |
           coverage run -m pytest
-          python ./CodeCoverage/code_coverage.py
+          cov = coverage.Coverage()
+          cov.load()
+
+          with open(os.devnull, "w") as f:
+          total = cov.report(file=f)
+          curl https://img.shields.io/badge/coavrege-$total%-green > badge.svg
+          gsutil  -h "Cache-Control: no-cache" cp badge.svg gs://${SOME_BUCKET}/${PROJECT_NAME}/codcov.svg
+          gsutil acl ch -u AllUsers:R gs://${SOME_BUCKET}/${PROJECT_NAME}/codcov.svg
       # - name: Publish cod cov badge
       #   run: |
       #     set -x
