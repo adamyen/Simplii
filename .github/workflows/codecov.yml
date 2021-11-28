@@ -19,7 +19,7 @@ jobs:
       - name: Run tests with pytest and create code coverage report
         run: |
           coverage run -m pytest
-          coverage report -m
+          python ./CodeCoverage/code_coverage.py
       # - name: Publish cod cov badge
       #   run: |
       #     set -x
