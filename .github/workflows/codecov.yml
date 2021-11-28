@@ -19,7 +19,7 @@ jobs:
       - name: Run tests with pytest and create code coverage badge
         run: |
           coverage run -m pytest
-          total = `python ./CodeCoverage/code_coverage.py`
+          total= `python ./CodeCoverage/code_coverage.py`
           if (( $(echo "$total == 84"))); then
             echo "script return correct response"
           fi
