@@ -19,12 +19,11 @@ jobs:
       - name: Run tests with pytest and create code coverage badge
         run: |
           coverage run -m pytest
-          cov = coverage.Coverage()
-          cov.load()
-
-          with open(os.devnull, "w") as f:
-          total = cov.report(file=f)
-          print("Total: {0:.0f}".format(total))
+          total = `python ./CodeCoverage/code_coverage.py`
+          if (( $(echo "$total == 84"))); then
+            echo "script return correct response"
+          fi
+          
       # - name: Publish cod cov badge
       #   run: |
       #     set -x
