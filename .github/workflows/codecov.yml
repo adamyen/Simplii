@@ -21,5 +21,12 @@ jobs:
           coverage run -m pytest
           total=`python ./CodeCoverage/code_coverage.py`
           curl "https://img.shields.io/badge/coavrege-$total%25-green" > badge.svg
-          gsutil  -h "Cache-Control: no-cache" cp badge.svg gs://adamyen/Simplii/codcov.svg
-          gsutil acl ch -u AllUsers:R gs://adamyen/Simplii/codcov.svg
+      - name: Create Awesome Badge
+        uses: schneegans/dynamic-badges-action@v1.1.0
+        with:
+        auth: ${{ secrets.GIST_SECRET }}
+        gistID: 4974f4b4275b0e2ed9c8776a9c995949
+        filename: test.json
+        label: CodeCov
+        message: ${total}
+        color: green
