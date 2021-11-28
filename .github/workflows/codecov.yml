@@ -20,9 +20,9 @@ jobs:
         run: |
           coverage run -m pytest
           total=`python ./CodeCoverage/code_coverage.py`
-          if (( $(echo "$total == 84"))); then
-            echo "script return correct response"
-          fi
+          curl "https://img.shields.io/badge/coavrege-$total%25-green" > badge.svg
+          gsutil  -h "Cache-Control: no-cache" cp badge.svg gs://$SOME_BACKET/$PROJECT_NAME/codcov.svg
+          gsutil acl ch -u AllUsers:R gs://$SOME_BACKET/$PROJECT_NAME/codcov.svg
           
       # - name: Publish cod cov badge
       #   run: |
