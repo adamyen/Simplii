@@ -21,7 +21,7 @@ jobs:
         run: |
           coverage run -m pytest
           total=`python ./CodeCoverage/code_coverage.py`
-          echo "TOTAL=${total)" >> $GITHUB_ENV
+          echo "TOTAL=${echo $total)" >> $GITHUB_ENV
       - name: Create Awesome Badge
         uses: schneegans/dynamic-badges-action@v1.1.0
         with:
