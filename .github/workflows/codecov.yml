@@ -24,9 +24,7 @@ jobs:
 
           with open(os.devnull, "w") as f:
           total = cov.report(file=f)
-          curl https://img.shields.io/badge/coavrege-$total%-green > badge.svg
-          gsutil  -h "Cache-Control: no-cache" cp badge.svg gs://${SOME_BUCKET}/${PROJECT_NAME}/codcov.svg
-          gsutil acl ch -u AllUsers:R gs://${SOME_BUCKET}/${PROJECT_NAME}/codcov.svg
+          print("Total: {0:.0f}".format(total))
       # - name: Publish cod cov badge
       #   run: |
       #     set -x
