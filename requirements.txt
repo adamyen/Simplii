@@ -7,3 +7,4 @@ jinja2
 MarkupSafe
 Werkzeug
 pytest
+coverage

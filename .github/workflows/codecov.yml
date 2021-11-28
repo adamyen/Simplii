@@ -17,7 +17,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run tests with pytest
-        run: python -m pytest
+        run: |
+          coverage python -m pytest
+          coverage report -m
       # - name: Publish cod cov badge
       #   run: |
       #     set -x
