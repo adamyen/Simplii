@@ -29,5 +29,5 @@ jobs:
           gistID: 4974f4b4275b0e2ed9c8776a9c995949
           filename: test.json
           label: CodeCov
-          message: ${{env.TOTAL}} 
+          message: ${{env.TOTAL}}%
           color: green
