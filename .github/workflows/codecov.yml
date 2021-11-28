@@ -6,8 +6,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-          total: 0
     steps:
       - uses: actions/checkout@v2
       - name: Install Python 3
@@ -19,10 +17,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run tests with pytest and create code coverage badge
+        id: codecov
         run: |
           coverage run -m pytest
           echo ::set-output name=TOTAL::$(`python ./CodeCoverage/code_coverage.py`)
-        id: codecov
+          echo "TOTAL=84" >> $GITHUB_ENV
       - name: Create Awesome Badge
         uses: schneegans/dynamic-badges-action@v1.1.0
         with:
@@ -30,5 +29,5 @@ jobs:
           gistID: 4974f4b4275b0e2ed9c8776a9c995949
           filename: test.json
           label: CodeCov
-          message: ${{steps.codcov.outputs.TOTAL}}
+          message: ${{env.TOTAL}}
           color: green
