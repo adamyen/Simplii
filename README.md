@@ -11,7 +11,7 @@
 ![Github pull requests](https://img.shields.io/github/issues-pr/Himanshuu-Gupta/Simplii)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Build Status](https://app.travis-ci.com/Himanshuu-Gupta/Simplii.svg?branch=main)](https://app.travis-ci.com/Himanshuu-Gupta/Simplii)
-![cod cov](http://$SOME_BACKET.storage.googleapis.com/$PROJECT_NAME/codcov.svg)
+![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/angelaho0504/4974f4b4275b0e2ed9c8776a9c995949/raw/test.json)
 [![Codecov](https://github.com/Himanshuu-Gupta/Simplii/actions/workflows/codecov.yml/badge.svg)](https://github.com/Himanshuu-Gupta/Simplii/actions/workflows/codecov.yml)
 
 ## Why use Simplii?
