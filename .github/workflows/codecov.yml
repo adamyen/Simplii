@@ -6,6 +6,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+          total: 0
     steps:
       - uses: actions/checkout@v2
       - name: Install Python 3
@@ -19,8 +21,8 @@ jobs:
       - name: Run tests with pytest and create code coverage badge
         run: |
           coverage run -m pytest
-          total=`python ./CodeCoverage/code_coverage.py`
-          curl "https://img.shields.io/badge/coavrege-$total%25-green" > badge.svg
+          env:
+            total=`python ./CodeCoverage/code_coverage.py`
       - name: Create Awesome Badge
         uses: schneegans/dynamic-badges-action@v1.1.0
         with:
