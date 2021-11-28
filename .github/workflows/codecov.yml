@@ -21,8 +21,9 @@ jobs:
       - name: Run tests with pytest and create code coverage badge
         run: |
           coverage run -m pytest
-          env:
-            total=`python ./CodeCoverage/code_coverage.py`
+          total=`python ./CodeCoverage/code_coverage.py`
+          echo ::set-env name=TOTAL::${{total}}
+        id: codecov
       - name: Create Awesome Badge
         uses: schneegans/dynamic-badges-action@v1.1.0
         with:
@@ -30,5 +31,5 @@ jobs:
           gistID: 4974f4b4275b0e2ed9c8776a9c995949
           filename: test.json
           label: CodeCov
-          message: ${{env.total}}
+          message: ${{steps.codcov.outputs.TOTAL}}
           color: green
