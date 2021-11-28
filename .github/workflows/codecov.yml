@@ -24,7 +24,7 @@ jobs:
       - name: Create Awesome Badge
         uses: schneegans/dynamic-badges-action@v1.1.0
         with:
-          auth: ${{ secrets.GIST_SECRET }}
+          auth: ${{ secrets.CSC_510_PROJ_3 }}
           gistID: 4974f4b4275b0e2ed9c8776a9c995949
           filename: test.json
           label: CodeCov
