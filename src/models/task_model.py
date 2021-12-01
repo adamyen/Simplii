@@ -79,6 +79,11 @@ class task_model:
         result = con.run_query(query)
         return result.to_dict('records')
 
+    def get_user_by_id(self, userid):
+        query = "SELECT * FROM user WHERE Userid =" + userid
+        result = con.run_query(query)
+        return result.to_dict('records')
+
     def update_task(self, data):
         values = ''
         for key, value in data.items():
