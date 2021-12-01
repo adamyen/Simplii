@@ -67,6 +67,7 @@ def send_daily_alerts():
     server.quit()
 
 def send_test_alerts():
+    print("Initializing test alerts...")
     todays_tasks = task_model.task_model.get_all_taks()
 
     try:
@@ -94,6 +95,7 @@ def send_test_alerts():
         
         This message was sent automatically, please do not reply.""".format(userID, task.get("Taskname"), task.get("Startdate"))
         server.sendmail(email, receiver_email, message)
+    print("Test alerts complete!")
     server.quit()
 
 
