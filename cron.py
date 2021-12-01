@@ -45,7 +45,9 @@ def send_daily_alerts():
         Simplii
         
         This message was sent automatically, please do not reply.""".format(userID, task.get("Taskname"), task.get("Startdate"))
-        server.sendmail()
+        server.sendmail(email, receiver_email, message)
+    server.quit()
+
 
 
 
@@ -56,5 +58,4 @@ scheduler.start()
 
 # Shut down the scheduler when exiting the app
 atexit.register(lambda: scheduler.shutdown())
-atexit.register(lambda: server.quit)
 
