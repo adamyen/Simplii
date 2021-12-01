@@ -26,6 +26,17 @@ class task_model:
         result = pd.DataFrame(list(result))
         return result.to_dict('records')
 
+    def get_todays_tasks(current_date=None):
+        if(current_date == None):
+            current_date = date.today()
+        dt = current_date
+        start_date = dt - timedelta(days=dt.weekday())
+        end_date = start_date + timedelta(hours=23)
+        query = "SELECT *, Categories.Category_name FROM Tasks JOIN Categories ON Tasks.Category= Categories.Category_ID WHERE (Startdate <='"+str(end_date)+"' AND Duedate >='"+str(start_date)+'\')'
+        result = con.run_query(query)
+        result = pd.DataFrame(list(result))
+        return result.to_dict('records')
+
     def get_backlog(current_date=None):
         if(current_date == None):
             current_date = date.today()
