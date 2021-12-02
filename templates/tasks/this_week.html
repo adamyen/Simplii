@@ -22,6 +22,11 @@
             chartStartData.push(startData);
             chartEndDate.push(endData);
 
+            const Difference_In_Time = endData - startData;
+            const Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+
+            chartTakenDays.push(Difference_In_Days);
+
             
         }
    
