@@ -16,6 +16,12 @@
         for (let i = 0; i < chartDataSet.length; i++) {
             chartLabel.push(chartDataSet[i]['2'] + "\n" + chartDataSet[i]['5'].slice(5, 16));
 
+            const startData = Date.parse(chartDataSet[i]['5']);
+            const endData = Date.parse(chartDataSet[i]['6']);
+
+            chartStartData.push(startData);
+            chartEndDate.push(endData);
+
             
         }
    
