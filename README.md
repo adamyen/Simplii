@@ -75,6 +75,9 @@ ER Diagram                 |  Application Flowchart
   - User interface to view all backlog tasks
 <img src="https://user-images.githubusercontent.com/18304940/140264488-94925f49-3b8e-48c1-8a8f-1083e26cbe69.jpeg" width="1000"/>
 
+## Phase 3 Works:
+- **Visualization Of Tasks**
+<img src="https://raw.githubusercontent.com/adamyen/Simplii/main/docs/Phase%203/Task%20Visualization.png" width="1000"/>
 
 ## Getting started:
 
@@ -149,10 +152,12 @@ This project is licensed under the terms of the MIT license. Please check [Licen
 - [x] Prioritize tasks based on deadlines into "This week", "Backlog" and "Future Tasks"
 - [x] Established connection between frontend and relational database
 
+## Phase 3:
+- [x] Visualisation on Tasks
+- [x] CI/CD Build pipeline should be implemented
+
 ### Future Enhancements:
 
-- [ ] CI/CD Build pipeline should be implemented
-- [ ] Visualisation on Tasks 
 - [ ] User session management needs to be implemented
 - [ ] Slack/ Discord Reminders or Subscription
 - [ ] Sub-tasks check list within a task
@@ -160,6 +165,17 @@ This project is licensed under the terms of the MIT license. Please check [Licen
 
 ## Contributions to the Project
 Please refer to the [Contributing.md](https://github.com/Himanshuu-Gupta/Simplii/blob/main/CONTRIBUTING.md) if you want to contrbute to the Wolftrack source code. Follow all the guidelines mentioned and raise a pull request for the developers to review before the code goes to the main source code.
+
+
+## Contributors of Phase 3
+<center>
+  <table>
+  <tr>
+    <td align="center"><a href="https://github.com/arnoldlee850807"><img src="https://avatars.githubusercontent.com/u/33062177?v=4" width="100px;" alt=""/><br /><sub><b>Arnold Lee</b></sub></a></td>
+    <td align="center"><a href="https://github.com/adamyen"><img src="https://avatars.githubusercontent.com/u/20686244?v=4" width="100px;" alt=""/><br /><sub><b>Adam Yen</b></sub></a></td>
+  </tr>
+</table>
+</center>
 
 ## Contributors of Phase 2
 <center>
