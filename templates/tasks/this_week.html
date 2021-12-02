@@ -3,6 +3,16 @@
     <div class="card-body">
         <h5 class="card-title">This Week</h5>
         <canvas id="myChart" width="400" height="400"></canvas>
+        <script id="chartScript">
+        const ctx = document.getElementById('myChart');  
+        const chartDataSet = {{ this_week_tasks|tojson }};
+        const chartLabel = [];
+        const chartStartData = [];
+        const chartEndDate = [];
+        const chartTakenDays = [];
+        const chartColor = [];
+        const chartBorderColor = [];
+        </script>
     </div>
     <table data-toggle="table" data-flat="true" data-search="true">
         <thead>
