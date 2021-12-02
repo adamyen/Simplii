@@ -42,7 +42,22 @@
             }
         }
    
-        
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: chartLabel,
+                datasets: [{
+                    label: 'Business days taken',
+                    data: chartTakenDays,
+                    backgroundColor: chartColor,
+                    borderColor: chartBorderColor,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+            }
+        });
         </script>
     </div>
     <table data-toggle="table" data-flat="true" data-search="true">
