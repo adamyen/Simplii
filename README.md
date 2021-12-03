@@ -36,6 +36,8 @@ https://user-images.githubusercontent.com/18304940/140261087-6491c967-fe11-469f-
 <code><a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank"><img height="50" src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-ar21.svg"></a></code>
 <code><a href="https://www.mysql.com/" target="_blank"><img height="50" src="https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg"></a></code>
 <code><a href="https://aws.amazon.com/" target="_blank"><img height="50" src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-ar21.svg"></a></code>
+<code><a href="https://www.chartjs.org/" target="_blank"><img height="50" src="https://www.chartjs.org/img/chartjs-logo.svg"></a></code>
+    
     
   </tr>
 </table>
