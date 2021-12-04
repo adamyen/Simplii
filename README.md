@@ -175,9 +175,9 @@ Please refer to the [Contributing.md](https://github.com/Himanshuu-Gupta/Simplii
   <table>
   <tr>
     <td align="center"><a href="https://github.com/arnoldlee850807"><img src="https://avatars.githubusercontent.com/u/33062177?v=4" width="100px;" alt=""/><br /><sub><b>Arnold Lee</b></sub></a></td>
-    <td align="center"><a href="https://github.com/adamyen"><img src="https://avatars.githubusercontent.com/u/20686244?v=4" width="100px;" alt=""/><br /><sub><b>Adam Yen</b></sub></a></td>
+    <td align="center"><a href="https://github.com/adamyen"><img src="https://avatars.githubusercontent.com/u/20686244?v=4" width="100px;" alt=""/><br /><sub><b>Fu-Jen Yen</b></sub></a></td>
     <td align="center"><a href="https://github.com/angelaho0504"><img src="https://avatars.githubusercontent.com/u/43093875?s=400&u=399af7466e359a50ab829bdb7e0e7ea63a0d86fa&v=4" width="100px;" alt=""/><br /><sub><b>Angela Ho</b></sub></a></td>
-    <td align="center"><a href="https://github.com/TheStarTiger"><img src="https://scontent-iad3-2.xx.fbcdn.net/v/t1.6435-9/125488696_1882944231845288_1480517934144463230_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=n4W9FJVKh_cAX98kWpl&tn=gJD8JBSaA0osAkUF&_nc_ht=scontent-iad3-2.xx&oh=e4d446efbc555b5d20b85e1c79b1a621&oe=61D21B10" width="100px;" alt=""/><br /><sub><b>Angela Ho</b></sub></a></td>
+    <td align="center"><a href="https://github.com/TheStarTiger"><img src="https://scontent-iad3-2.xx.fbcdn.net/v/t1.6435-9/125488696_1882944231845288_1480517934144463230_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=n4W9FJVKh_cAX98kWpl&tn=gJD8JBSaA0osAkUF&_nc_ht=scontent-iad3-2.xx&oh=e4d446efbc555b5d20b85e1c79b1a621&oe=61D21B10" width="100px;" alt=""/><br /><sub><b>Dani Hove</b></sub></a></td>
   </tr>
 </table>
 </center>
