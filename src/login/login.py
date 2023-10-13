@@ -13,7 +13,24 @@ def loginPostMethod():
     """This function logs in users and redirects to home page."""
     return redirect("/")
 
+@login.route('/signup', methods=['POST'])
+def signUpMethod():
+    data = request.form
+    print("In signup new\n", data.items(), "\n\n")
+
+    for key, value in data.items():
+        print(key, " ============== ", value)
+
+    """This function logs in users and redirects to home page."""
+    return "Testing"
+
 @login.route('/logout', methods=['GET'])
 def logoutMethod():
     """This function logsout of the application and redirects to login page again."""
     return redirect("/login")
+
+
+def print(data):
+    print("printing")
+    for key, value in data.items():
+        print(key, " ============== ", value)
