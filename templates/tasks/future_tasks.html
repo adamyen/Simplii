@@ -74,14 +74,14 @@
             {% for item in future_tasks %}
             <tr>
                 <td>{{ item.2 }}</td>
-                {% if item.3 == 'Done' %}
-                <td style="background-color: lightgreen;">{{ item.3 }}</td>
-                {% elif item.3 == 'In Progress' %}
-                <td style="background-color: lightyellow;">{{ item.3 }}</td>
-                {% elif item.3 == 'Waiting' %}
-                <td style="background-color: lightcoral;">{{ item.3 }}</td>
+                {% if item.4 == 'Done' %}
+                <td style="background-color: lightgreen;">{{ item.4 }}</td>
+                {% elif item.4 == 'Waiting' %}
+                <td style="background-color: lightyellow;">{{ item.4 }}</td>
+                {% elif item.4 == 'Stuck' %}
+                <td style="background-color: lightcoral;">{{ item.4 }}</td>
                 {% else %}
-                <td style="background-color: lightblue;">{{ item.3 }}</td>
+                <td style="background-color: lightblue;">{{ item.4 }}</td>
                 {% endif %}
                 <td>{{ item.9 }}</td>
                 <td>{{ item.11 }}</td>
