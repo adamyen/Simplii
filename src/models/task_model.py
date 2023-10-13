@@ -1,6 +1,7 @@
 import pandas as pd
 from src.models.sql_helper import sql_helper
 from datetime import datetime, timedelta, date
+import uuid
 
 con = sql_helper()
 
@@ -59,8 +60,8 @@ class task_model:
         return result.to_dict('records')
 
     def create_tasks(self, data):
-        columns = ''
-        values = ''
+        columns = 'TaskID, '
+        values = f'\'{uuid.uuid4()}\', '
         for key, value in data.items():
             columns += str(key)+', '
             values += "'"+str(value)+"', "

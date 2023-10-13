@@ -44,9 +44,9 @@ def user_details():
 
 
 if __name__ == "__main__":
-    notification_system.scheduler.init_app(app)
+    #notification_system.scheduler.init_app(app)
     print("Hello")
-    notification_system.scheduler.add_job(func=notification_system.send_test_alerts, trigger="interval", minutes=1)
-    notification_system.scheduler.start()
+    #notification_system.scheduler.add_job(func=notification_system.send_test_alerts, trigger="interval", minutes=1)
+    #notification_system.scheduler.start()
     app.run(debug=True)
 
