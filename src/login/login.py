@@ -1,6 +1,6 @@
-from flask import Blueprint, request, session
+from flask import Blueprint, request, session, flash
 from flask import render_template, redirect
-from src.models.user_model import user_model
+from src.controller.user_controller import create_user
 
 login = Blueprint('login', __name__)
 
@@ -16,16 +16,15 @@ def loginPostMethod():
 
 @login.route('/signup', methods=['POST'])
 def signUpMethod():
-    print(request.form)
-    data = request.form
-    #print("In signup new\n", data.items(), "\n\n")
-    user = user_model()
-    x = user.create_user(data)
-    if x:
-        return "User Created Successfully"
-    else:
-        return "Error! Check logs"
     """This function logs in users and redirects to home page."""
+    data = request.form
+    success = create_user(data)
+    if success:
+        flash("Sign up successful!")
+        return redirect("/login")
+    else:
+        flash("Sign up failed, Please try again!")
+        return redirect("/login")
 
 @login.route('/logout', methods=['GET'])
 def logoutMethod():

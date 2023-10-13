@@ -6,20 +6,18 @@ import uuid
 con = sql_helper()
 class user_model:
     def create_user(self, data):
-        print(data)
-        userID = 1034
-        columns = 'UserID, '
-        values = f'{userID}, '
+        userID = uuid.uuid4()
+        columns = 'UserId, '
+        values = f'\'{userID}\', '
         for key, value in data.items():
             columns += str(key)+', '
             values += "'"+str(value)+"', "
 
         
         query = "INSERT INTO User ("+columns[:-2]+" ) VALUES (" + values[:-2]+" );"
-        print(query)
+        
         try:
             x = con.run_query(query)
-            print("From model ", x)
             return True
         except Exception as e:
             print(e)
