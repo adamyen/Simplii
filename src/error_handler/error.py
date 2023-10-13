@@ -9,10 +9,12 @@ def application_error(e):
 
 @handle_err.app_errorhandler(404)
 def token_expired_exception(e):
+    print(e)
     return make_response('This is not a valid URL, please check for any spelling mistakes!', 404)
 
 @handle_err.app_errorhandler(405)
 def token_expired_exception(e):
+    print(e)
     return make_response('The method is not allowed for the given URL!', 405)
 
 @handle_err.app_errorhandler(Exception)

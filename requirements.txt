@@ -8,3 +8,5 @@ MarkupSafe
 Werkzeug
 pytest
 coverage
+pandas
+flask_apscheduler
