@@ -7,10 +7,10 @@ class sql_helper:
     def connect_database(self):
         try:
             self.connection_obj = pymysql.connect(
-                    host='localhost',
+                    host='simpli.cx7psuz6gzvw.us-east-1.rds.amazonaws.com',
                     port = 3306,
-                    user = 'root',
-                    password = 'your_password_here',
+                    user = 'admin',
+                    password = '1q2w3e4r5t',
                     db = "simpli",
                     autocommit=True
                     ) 
