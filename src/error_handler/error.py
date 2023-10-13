@@ -4,6 +4,7 @@ handle_err = Blueprint('errors', __name__)
 
 @handle_err.app_errorhandler(500)
 def application_error(e):
+    print(e)
     return make_response('Sorry, there is an application error!', 500)
 
 @handle_err.app_errorhandler(404)
@@ -16,6 +17,7 @@ def token_expired_exception(e):
 
 @handle_err.app_errorhandler(Exception)
 def error_handler(e):
+    print(e)
     return make_response('An error occurred in the application!', 500)
 
 
