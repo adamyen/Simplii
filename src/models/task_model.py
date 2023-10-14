@@ -16,45 +16,45 @@ class task_model:
         result = pd.DataFrame(list(result))
         return result.to_dict('records')
     
-    def get_this_week_tasks(current_date=None):
+    def get_this_week_tasks(currUserName, current_date=None):
         if(current_date == None):
             current_date = date.today()
         dt = current_date
         start_date = dt - timedelta(days=dt.weekday())
         end_date = start_date + timedelta(days=6)
-        query = "SELECT *, Categories.Category_name FROM Tasks JOIN Categories ON Tasks.Category= Categories.Category_ID WHERE (Startdate <='"+str(end_date)+"' AND Duedate >='"+str(start_date)+'\')'
+        query = "SELECT *, Categories.Category_name FROM Tasks JOIN Categories ON Tasks.Category= Categories.Category_ID WHERE (Startdate <='"+str(end_date)+"' AND Duedate >='"+str(start_date)+'\' AND UserID = '+"\'"+currUserName+'\')'
         result = con.run_query(query)
         result = pd.DataFrame(list(result))
         return result.to_dict('records')
 
-    def get_todays_tasks(current_date=None):
+    def get_todays_tasks(currUserName, current_date=None):
         if(current_date == None):
             current_date = date.today()
         dt = current_date
         start_date = dt - timedelta(days=dt.weekday())
         end_date = start_date + timedelta(hours=23)
-        query = "SELECT *, Categories.Category_name FROM Tasks JOIN Categories ON Tasks.Category= Categories.Category_ID WHERE (Startdate <='"+str(end_date)+"' AND Duedate >='"+str(start_date)+'\')'
+        query = "SELECT *, Categories.Category_name FROM Tasks JOIN Categories ON Tasks.Category= Categories.Category_ID WHERE (Startdate <='"+str(end_date)+"' AND Duedate >='"+str(start_date)+'\' AND UserID = '+"\'"+currUserName+'\')'
         result = con.run_query(query)
         result = pd.DataFrame(list(result))
         return result.to_dict('records')
 
-    def get_backlog(current_date=None):
+    def get_backlog(currUserName, current_date=None):
         if(current_date == None):
             current_date = date.today()
         dt = current_date
         start_date = dt - timedelta(days=dt.weekday())
-        query = "SELECT  *, Categories.Category_name, DATE(Duedate) FROM Tasks JOIN Categories ON Tasks.Category= Categories.Category_ID WHERE Duedate <='"+str(start_date)+'\' and status <> "Done"'
+        query = "SELECT  *, Categories.Category_name, DATE(Duedate) FROM Tasks JOIN Categories ON Tasks.Category= Categories.Category_ID WHERE Duedate <='"+str(start_date)+'\' and status <> "Done" AND UserID = '+"\'"+currUserName+"\'"
         result = con.run_query(query)
         result = pd.DataFrame(list(result))
         return result.to_dict('records')
 
-    def get_future_tasks(current_date=None):
+    def get_future_tasks(currUserName, current_date=None):
         if(current_date == None):
             current_date = date.today()
         dt = current_date
         start_date = dt - timedelta(days=dt.weekday())
         end_date = start_date + timedelta(days=6)
-        query = "SELECT  *, Categories.Category_name, DATE(Duedate) FROM Tasks JOIN Categories ON Tasks.Category= Categories.Category_ID WHERE Startdate >='"+str(end_date)+"'"
+        query = "SELECT  *, Categories.Category_name, DATE(Duedate) FROM Tasks JOIN Categories ON Tasks.Category= Categories.Category_ID WHERE Startdate >='"+str(end_date)+"' AND UserID = \'"+currUserName+"\'"
         result = con.run_query(query)
         result = pd.DataFrame(list(result))
         return result.to_dict('records')

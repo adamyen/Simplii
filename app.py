@@ -25,9 +25,9 @@ def homePage():
     currUserName = session["username"]
     if not currUserName:
         return redirect("/login")
-    this_week_tasks = task_model.task_model.get_this_week_tasks()
-    backlog_tasks = task_model.task_model.get_backlog()
-    future_tasks = task_model.task_model.get_future_tasks()
+    this_week_tasks = task_model.task_model.get_this_week_tasks(currUserName)
+    backlog_tasks = task_model.task_model.get_backlog(currUserName)
+    future_tasks = task_model.task_model.get_future_tasks(currUserName)
     categories = category_model.category_model.get_category()
     """This function renders the home page."""
     return render_template("home.html", this_week_tasks=this_week_tasks,
