@@ -15,9 +15,16 @@ app.register_blueprint(login)
 app.config.from_object(notification_system.Config())
 app.config['SECRET_KEY'] = 'SECRET_KEY'
 
+@app.route("/login")
+def load_login():
+    """This function renders the login page."""
+    return render_template("login.html")
 
 @app.route("/")
 def homePage():
+    checkLoggedIn = session["username"]
+    if not checkLoggedIn:
+        return redirect("/login")
     this_week_tasks = task_model.task_model.get_this_week_tasks()
     backlog_tasks = task_model.task_model.get_backlog()
     future_tasks = task_model.task_model.get_future_tasks()

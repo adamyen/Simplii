@@ -1,6 +1,6 @@
 from flask import Blueprint, request, session, flash
 from flask import render_template, redirect
-from src.controller.user_controller import create_user
+from src.controller.user_controller import create_user, login_control
 
 login = Blueprint('login', __name__)
 
@@ -12,7 +12,12 @@ def loginMethod():
 @login.route('/login', methods=['POST'])
 def loginPostMethod():
     """This function logs in users and redirects to home page."""
-    return redirect("/")
+    loginStatus  = login_control(request.form)
+    if loginStatus:
+        session["username"] = request.form["username"]
+        return redirect("/")
+    flash("Incorrect username or password!", 'error')
+    return redirect("/login")
 
 @login.route('/signup', methods=['POST'])
 def signUpMethod():
@@ -29,4 +34,5 @@ def signUpMethod():
 @login.route('/logout', methods=['GET'])
 def logoutMethod():
     """This function logsout of the application and redirects to login page again."""
+    session["username"] = ""
     return redirect("/login")
