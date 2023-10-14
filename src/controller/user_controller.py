@@ -7,6 +7,10 @@ def login_control(data):
         return True
     return False
 
+def get_loggedIn_User(username):
+    userId = user.get_loggedIn_User(username)
+    return userId
+
 
 def create_user(data):
     success = user.create_user(data)

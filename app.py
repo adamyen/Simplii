@@ -22,8 +22,8 @@ def load_login():
 
 @app.route("/")
 def homePage():
-    checkLoggedIn = session["username"]
-    if not checkLoggedIn:
+    currUserName = session["username"]
+    if not currUserName:
         return redirect("/login")
     this_week_tasks = task_model.task_model.get_this_week_tasks()
     backlog_tasks = task_model.task_model.get_backlog()

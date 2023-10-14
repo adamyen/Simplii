@@ -27,7 +27,7 @@ class user_model:
         username = data['username']
         password = data['password']
         query = f"SELECT Password FROM User WHERE EmailId = \'{username}\'"
-        
+
         x = con.run_query(query)
 
         if x:
@@ -36,5 +36,8 @@ class user_model:
                 return True
         return False
 
-
+    def get_loggedIn_User(self, username):
+        query = f"SELECT UserId FROM User WHERE EmailId = \'{username}\'"
+        x = con.run_query(query)
+        return x[0][0]
 

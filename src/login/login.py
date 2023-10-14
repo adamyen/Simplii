@@ -1,6 +1,6 @@
 from flask import Blueprint, request, session, flash
 from flask import render_template, redirect
-from src.controller.user_controller import create_user, login_control
+from src.controller.user_controller import create_user, login_control, get_loggedIn_User
 
 login = Blueprint('login', __name__)
 
@@ -14,7 +14,7 @@ def loginPostMethod():
     """This function logs in users and redirects to home page."""
     loginStatus  = login_control(request.form)
     if loginStatus:
-        session["username"] = request.form["username"]
+        session["username"] = get_loggedIn_User(request.form["username"])
         return redirect("/")
     flash("Incorrect username or password!", 'error')
     return redirect("/login")
