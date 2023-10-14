@@ -20,10 +20,10 @@ def signUpMethod():
     data = request.form
     success = create_user(data)
     if success:
-        flash("Sign up successful!")
+        flash("Sign up successful!", 'success')
         return redirect("/login")
     else:
-        flash("Sign up failed, Please try again!")
+        flash("Sign up failed, Please try again!", 'error')
         return redirect("/login")
 
 @login.route('/logout', methods=['GET'])
