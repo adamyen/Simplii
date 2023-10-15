@@ -14,7 +14,10 @@ def loginPostMethod():
     """This function logs in users and redirects to home page."""
     loginStatus  = login_control(request.form)
     if loginStatus:
-        session["username"] = get_loggedIn_User(request.form["username"])
+        userDetails = get_loggedIn_User(request.form["username"])
+        session["username"] = userDetails[0]
+        session["email"] = userDetails[1]
+        session["fullname"] = userDetails[2]
         return redirect("/")
     flash("Incorrect username or password!", 'error')
     return redirect("/login")

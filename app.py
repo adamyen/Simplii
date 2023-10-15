@@ -22,7 +22,9 @@ def load_login():
 
 @app.route("/")
 def homePage():
-    currUserName = session["username"]
+    currUserName = None
+    if "username" in session.keys():
+        currUserName = session["username"]
     if not currUserName:
         return redirect("/login")
     this_week_tasks = task_model.task_model.get_this_week_tasks(currUserName)

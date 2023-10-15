@@ -37,7 +37,7 @@ class user_model:
         return False
 
     def get_loggedIn_User(self, username):
-        query = f"SELECT UserId FROM User WHERE EmailId = \'{username}\'"
+        query = f"SELECT UserId, EmailId, FullName FROM User WHERE EmailId = \'{username}\'"
         x = con.run_query(query)
-        return x[0][0]
+        return x[0]
 

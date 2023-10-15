@@ -8,8 +8,8 @@ def login_control(data):
     return False
 
 def get_loggedIn_User(username):
-    userId = user.get_loggedIn_User(username)
-    return userId
+    userDetails = user.get_loggedIn_User(username)
+    return userDetails
 
 
 def create_user(data):
