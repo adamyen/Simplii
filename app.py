@@ -15,12 +15,21 @@ app.register_blueprint(login)
 app.config.from_object(notification_system.Config())
 app.config['SECRET_KEY'] = 'SECRET_KEY'
 
+@app.route("/login")
+def load_login():
+    """This function renders the login page."""
+    return render_template("login.html")
 
 @app.route("/")
 def homePage():
-    this_week_tasks = task_model.task_model.get_this_week_tasks()
-    backlog_tasks = task_model.task_model.get_backlog()
-    future_tasks = task_model.task_model.get_future_tasks()
+    currUserName = None
+    if "username" in session.keys():
+        currUserName = session["username"]
+    if not currUserName:
+        return redirect("/login")
+    this_week_tasks = task_model.task_model.get_this_week_tasks(currUserName)
+    backlog_tasks = task_model.task_model.get_backlog(currUserName)
+    future_tasks = task_model.task_model.get_future_tasks(currUserName)
     categories = category_model.category_model.get_category()
     """This function renders the home page."""
     return render_template("home.html", this_week_tasks=this_week_tasks,

@@ -21,11 +21,11 @@
                 </div>
                 <div class="form-group">
                     <label for="taskName">Full Name</label>
-                    <input type="text" name="taskname" class="form-control" id="taskName" placeholder="Jessica Holds" required="required">
+                    <input type="text" name="taskname" class="form-control" id="taskName" placeholder="{{session['fullname']}}" required="required">
                 </div>
                 <div class="form-group">
                     <label for="taskName">Email</label>
-                    <input type="email" name="taskname" class="form-control" id="taskName" placeholder="suraj@ncsu.edu" disabled=true>
+                    <input type="email" name="taskname" class="form-control" id="taskName" placeholder="{{session['email']}}" disabled=true>
                 </div>
                 <a href="">Change Password</a>
                 <div class="card-body">

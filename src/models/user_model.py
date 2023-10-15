@@ -17,8 +17,27 @@ class user_model:
         query = "INSERT INTO User ("+columns[:-2]+" ) VALUES (" + values[:-2]+" );"
         
         try:
-            x = con.run_query(query)
+            con.run_query(query)
             return True
         except Exception as e:
             print(e)
             return False
+    
+    def login(self, data):
+        username = data['username']
+        password = data['password']
+        query = f"SELECT Password FROM User WHERE EmailId = \'{username}\'"
+
+        x = con.run_query(query)
+
+        if x:
+            check = x[0][0]
+            if password == check:
+                return True
+        return False
+
+    def get_loggedIn_User(self, username):
+        query = f"SELECT UserId, EmailId, FullName FROM User WHERE EmailId = \'{username}\'"
+        x = con.run_query(query)
+        return x[0]
+
