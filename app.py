@@ -39,7 +39,6 @@ def homePage():
 def edit_task():
     """This function renders the edit task page."""
     task_id = request.args.get('task_id')
-    print(task_id)
     return render_template("edit_task.html",task_id = task_id)
 
 @app.route("/view_all_tasks")
