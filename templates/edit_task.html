@@ -15,7 +15,10 @@
             <div class="card status-card col-md" style="width: auto;">
                 <div class="card-body">
                     <h5 class="card-title" style="float: left;">Task Name</h5>
-                    <button style="float: right;" class="btn btn-outline-danger">Delete Task</button>
+                    <form method="GET" action="/tasks" style="float: right;">
+                        <input type="hidden" name="taskid" value="{{ task_id }}">
+                        <button type="submit" class="btn btn-outline-danger">Delete Task</button>
+                    </form>
                 </div>
                 <div class="form-group">
                     <label for="taskName">Task Name</label>
