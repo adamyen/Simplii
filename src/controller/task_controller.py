@@ -1,5 +1,6 @@
 from flask import Blueprint, request, redirect
 from src.models.task_model import task_model
+from flask import render_template
 
 tasks = Blueprint('tasks', __name__, url_prefix='/tasks')
 
@@ -29,8 +30,21 @@ def delete_task():
 
 @tasks.route('/update', methods=['POST'])
 def update_task():
+    task_id = request.form['taskid']
     data = request.form
-    task.update_task(data)
-    return 'Task updated succesfully!', 200
+    task.update_task(task_id, data)
+    return redirect('/')
 
+@tasks.route('/edit_task', methods=['GET', 'POST'])
+def edit_task():
+    existing_data = None
+
+    if request.method == 'POST':
+        task_id = request.form.get('taskid')
+        if not task_id:
+            task_id = request.args.get('taskid')
+        print(task_id)
+        existing_data = task.get_task_by_id(task_id)
+
+    return render_template('edit_task.html', existing_data=existing_data)
 
