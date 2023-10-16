@@ -2,7 +2,6 @@ from flask import Blueprint, request, redirect
 from src.models.task_model import task_model
 
 tasks = Blueprint('tasks', __name__, url_prefix='/tasks')
-print("yooyo")
 task = task_model()
 
 def get_tasks():
@@ -24,10 +23,7 @@ def create_task():
 
 @tasks.route('', methods=['GET'])
 def delete_task():
-    print("delete fn")
-    # taskid = request.form['taskid']
     taskid = request.args.get('taskid')
-    print("task id - " + taskid)
     task.delete_task(taskid)
     return redirect('/')
 

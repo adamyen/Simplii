@@ -73,7 +73,6 @@ class task_model:
 
     def delete_task(self, taskid):
         query = "DELETE FROM Tasks WHERE Taskid ='"+ taskid+"';"
-        print(query)
         con.run_query(query)
         return
         
