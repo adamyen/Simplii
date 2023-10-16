@@ -10,7 +10,7 @@ class sql_helper:
                     host='localhost',
                     port = 3306,
                     user = 'root',
-                    password = '2273@Sry',
+                    password = 'YOUR PASSWORD HERE',
                     db = "simpli",
                     autocommit=True
                     ) 
