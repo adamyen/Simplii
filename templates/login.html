@@ -9,7 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="{{ url_for('static', filename='js/login.js') }}"></script>
-    
+    <style>
+      .flash-message {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            border-radius: 5px;
+            transition: opacity 0.5s; /* Add a fade-out effect */
+        }
+        .flash-message.success {
+            background-color: lightgreen;
+            color: green;
+        }
+        .flash-message.error {
+            background-color: rgb(252, 197, 197);
+            color: red;
+        }
+  </style>
   </head>
 <body>
   <div class="container">
@@ -34,6 +50,24 @@
         <div class="form-content">
           <div class="login-form">
             <div class="title">Login</div>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                  {% for message in messages %}
+                      <p class="flash-message {{ message[0] }}">{{ message [1] }}</p>
+                  {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <script>
+              const flashMessages = document.querySelectorAll('.flash-message');
+                flashMessages.forEach(message => {
+                    setTimeout(() => {
+                        message.style.opacity = '0';
+                        setTimeout(() => {
+                            message.style.display = 'none';
+                        }, 300); // Delay for 0.5 seconds after the fade-out
+                    }, 3000); // 5000 milliseconds = 5 seconds
+                });
+          </script>
           <form name="loginForm" action="/login" method="post">
             <div class="input-boxes">
               <div class="input-box">
@@ -53,19 +87,19 @@
       </div>
         <div class="signup-form">
           <div class="title">Signup</div>
-        <form name="signupForm" action="#" method="post">
+        <form name="signupForm" action="/signup" method="post">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Enter your name" required>
+                <input name = "FullName" type="text" placeholder="Enter your name" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Enter your email" required>
+                <input name = "EmailID" type="text" placeholder="Enter your email" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your password" required>
+                <input name = "Password" type="password" placeholder="Enter your password" required>
               </div>
               <div class="button input-box">
                 <input type="submit" value="Submit">

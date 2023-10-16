@@ -47,7 +47,7 @@
                                     <label for="taskName">Task Name</label>
                                     <input type="text" name="Taskname" class="form-control" id="taskName" placeholder="Do Dishes" required="required">
                                 </div>
-                                <input type="hidden" id="UserID" name="UserID" value="1">
+                                <input type="hidden" id="UserID" name="UserID" value= "{{session['username']}}">
                                 <input type="hidden" id="Status" name="Status" value="Waiting">
                                 <div class="form-group">
                                     <label for="Category" required="required">Category</label>

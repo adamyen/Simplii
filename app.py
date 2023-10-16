@@ -1,5 +1,5 @@
 from src.error_handler.error import handle_err
-from flask import Flask, render_template, redirect, session
+from flask import Flask, render_template, redirect, session, request
 from flask_apscheduler import APScheduler, scheduler
 from apscheduler.schedulers.background import BackgroundScheduler
 import src.models.task_model as task_model
@@ -15,12 +15,21 @@ app.register_blueprint(login)
 app.config.from_object(notification_system.Config())
 app.config['SECRET_KEY'] = 'SECRET_KEY'
 
+@app.route("/login")
+def load_login():
+    """This function renders the login page."""
+    return render_template("login.html")
 
 @app.route("/")
 def homePage():
-    this_week_tasks = task_model.task_model.get_this_week_tasks()
-    backlog_tasks = task_model.task_model.get_backlog()
-    future_tasks = task_model.task_model.get_future_tasks()
+    currUserName = None
+    if "username" in session.keys():
+        currUserName = session["username"]
+    if not currUserName:
+        return redirect("/login")
+    this_week_tasks = task_model.task_model.get_this_week_tasks(currUserName)
+    backlog_tasks = task_model.task_model.get_backlog(currUserName)
+    future_tasks = task_model.task_model.get_future_tasks(currUserName)
     categories = category_model.category_model.get_category()
     """This function renders the home page."""
     return render_template("home.html", this_week_tasks=this_week_tasks,
@@ -29,7 +38,8 @@ def homePage():
 @app.route("/edit_task")
 def edit_task():
     """This function renders the edit task page."""
-    return render_template("edit_task.html")
+    task_id = request.args.get('task_id')
+    return render_template("edit_task.html",task_id = task_id)
 
 @app.route("/view_all_tasks")
 def view_all_tasks():
@@ -44,9 +54,9 @@ def user_details():
 
 
 if __name__ == "__main__":
-    notification_system.scheduler.init_app(app)
+    #notification_system.scheduler.init_app(app)
     print("Hello")
-    notification_system.scheduler.add_job(func=notification_system.send_test_alerts, trigger="interval", minutes=1)
-    notification_system.scheduler.start()
+    #notification_system.scheduler.add_job(func=notification_system.send_test_alerts, trigger="interval", minutes=1)
+    #notification_system.scheduler.start()
     app.run(debug=True)
 
