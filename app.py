@@ -52,6 +52,13 @@ def user_details():
     """This function renders the edit task page."""
     return render_template("view_user_details.html")
 
+@app.route('/clear_session_variable')
+def clear_session_variable():
+    session.pop('username', None)
+    session.pop('email', None)
+    session.pop('fullname', None)
+    return "Session Cleared"
+
 
 if __name__ == "__main__":
     #notification_system.scheduler.init_app(app)
