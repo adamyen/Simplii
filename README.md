@@ -179,6 +179,21 @@ This project is licensed under the terms of the MIT license. Please check [Licen
 ## Contributions to the Project
 Please refer to the [Contributing.md](https://github.com/Himanshuu-Gupta/Simplii/blob/main/CONTRIBUTING.md) if you want to contrbute to the Wolftrack source code. Follow all the guidelines mentioned and raise a pull request for the developers to review before the code goes to the main source code.
 
+## Contributors of Phase 4
+<center>
+  <table>
+  <tr>
+    <td align="center"><a href="https://github.com/m-payal"><img src="![image](https://github.com/Prathmesh2498/Simplii/assets/51577440/89aaee2a-a6b3-4d86-a751-69640f8169cc)
+" width="100px;" alt=""/><br /><sub><b>Payal Mehta</b></sub></a></td>
+    <td align="center"><a href="https://github.com/Prathmesh2498"><img src="![image](https://github.com/Prathmesh2498/Simplii/assets/51577440/cded25ca-1215-4ddc-8b4e-838a663da115)
+" width="100px;" alt=""/><br /><sub><b>Prathmesh Deshpande</b></sub></a></td>
+    <td align="center"><a href="https://github.com/sshrutii"><img src="![image](https://github.com/Prathmesh2498/Simplii/assets/51577440/35aae40f-89b7-45b5-bb33-4914926242d8)
+" width="100px;" alt=""/><br /><sub><b>Shruti Yadav</b></sub></a></td>
+    <td align="center"><a href="https://github.com/sumedh-git"><img src="![image](https://github.com/Prathmesh2498/Simplii/assets/51577440/f77b0a0c-5920-4598-a8e9-f341d7831721)
+" width="100px;" alt=""/><br /><sub><b>Sumedh Limurkar</b></sub></a></td>
+  </tr>
+</table>
+</center>
 
 ## Contributors of Phase 3
 <center>
