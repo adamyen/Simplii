@@ -72,8 +72,10 @@ class task_model:
         return
 
     def delete_task(self, taskid):
-        query = "DELETE FROM tasks WHERE Taskid ="+ taskid
+        query = "DELETE FROM Tasks WHERE Taskid ='"+ taskid+"';"
         con.run_query(query)
+        return
+        
 
     def get_task_by_id(self, taskid):
         query = "SELECT * FROM tasks WHERE Taskid =" + taskid

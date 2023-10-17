@@ -1,5 +1,5 @@
 from src.error_handler.error import handle_err
-from flask import Flask, render_template, redirect, session
+from flask import Flask, render_template, redirect, session, request
 from flask_apscheduler import APScheduler, scheduler
 from apscheduler.schedulers.background import BackgroundScheduler
 import src.models.task_model as task_model
@@ -38,7 +38,8 @@ def homePage():
 @app.route("/edit_task")
 def edit_task():
     """This function renders the edit task page."""
-    return render_template("edit_task.html")
+    task_id = request.args.get('task_id')
+    return render_template("edit_task.html",task_id = task_id)
 
 @app.route("/view_all_tasks")
 def view_all_tasks():
