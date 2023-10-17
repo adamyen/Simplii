@@ -161,11 +161,19 @@ This project is licensed under the terms of the MIT license. Please check [Licen
 - [x] CI/CD Build pipeline should be implemented
 - [x] Implemented e-mail notification system
 
+## Phase 4:
+- [x] User session management fixed
+- [x] Fixed update tasks form
+- [x] Sub-tasks check list within a task
+- [x] Working of Delete task button
+- [x] Fixed tasks tables: mapped with correct values
+
+ 
 ### Future Enhancements:
 
-- [ ] User session management needs to be implemented
+- [ ] Fix notification system for emails
 - [ ] Slack/ Discord Reminders or Subscription
-- [ ] Sub-tasks check list within a task
+- [ ] Add date tracking for sub tasks
 
 
 ## Contributions to the Project
