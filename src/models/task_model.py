@@ -2,6 +2,7 @@ import pandas as pd
 from src.models.sql_helper import sql_helper
 from datetime import datetime, timedelta, date
 import uuid
+from flask import flash
 
 con = sql_helper()
 
@@ -87,11 +88,11 @@ class task_model:
         result = con.run_query(query)
         return result.to_dict('records')
 
-    def update_task(self, data):
+    def update_task(self, task_id, data):
         values = ''
         for key, value in data.items():
-            values += str(key)+"= '"+str(value)+"', "
-        query = "UPDATE tasks SET "+values[:-2]+";"
+            values += f"{key} = '{value}', "
+        query = f"UPDATE Tasks SET {values[:-2]} WHERE TaskID = '{task_id}';"
         con.run_query(query)
         return
 

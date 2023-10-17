@@ -18,7 +18,7 @@
             {% for item in all_tasks %}
             <tr>
                 <td>{{ item.2 }}</td>
-                {% if item.3 == 'Done' %}
+                {% if item.4 == 'Done' %}
                 <td style="background-color: lightgreen;">{{ item.3 }}</td>
                 {% elif item.3 == 'In Progress' %}
                 <td style="background-color: lightyellow;">{{ item.3 }}</td>
@@ -27,10 +27,10 @@
                 {% else %}
                 <td style="background-color: lightblue;">{{ item.3 }}</td>
                 {% endif %}
-                <td>{{ item.9 }}</td>
                 <td>{{ item.11 }}</td>
-                <td>{{ item.12 }}</td>
-                <td style="text-align: center;"><a href="/edit_task"><i class="material-icons">edit</i></a></td>
+                <td>{{ item.4 }}</td>
+                <td>{{ item. 5 }} </td>
+                <td style="text-align: center;"><a href="/edit_task?task_id={{item.0}}"><i class="material-icons">edit</i></a></td>
             </tr>
             {% endfor %}
 
