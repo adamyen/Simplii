@@ -35,6 +35,7 @@ def update_task():
     task_id = request.form['taskid']
     data = request.form
     task.update_task(task_id, data)
+    print(task_id)
     flash('User details have been successfully updated', 'success')
     return redirect('/')
 

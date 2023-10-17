@@ -11,12 +11,19 @@
 
         <!-- Content -->
         <div class="col-sm-9 text-left main-content">
-            <form action="/tasks/update" method="POST">
+
             <div class="card status-card col-md" style="width: auto;">
                 <div class="card-body">
                     <h5 class="card-title" style="float: left;">Task Name</h5>
-                    <button style="float: right;" class="btn btn-outline-danger">Delete Task</button>
+                    
+                    <form method="GET" action="/tasks" style="float: right;">
+                        <input type="hidden" name="taskid" value="{{ task_id }}">
+                        <button type="submit" class="btn btn-outline-danger">Delete Task</button>
+                    </form>
                 </div>
+
+                <form action="/tasks/update" method="POST">
+                    <input type="hidden" name="taskid" value="{{ task_id }}"> 
                 <div class="form-group">
                     <label for="taskName">Task Name</label>
                     <input type="text" name="taskname" class="form-control" id="taskName" placeholder="Do Dishes" required="required">
@@ -56,9 +63,9 @@
                     var dd = String(today.getDate()).padStart(2, '0');
                     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
                     var yyyy = today.getFullYear();
-                
+
                     today = yyyy + '-' + mm + '-' + dd;
-                
+
                     // Set the current date as the value for the input fields
                     document.getElementById('start-date-input').value = today;
                     document.getElementById('due-date-input').value = today;
@@ -68,13 +75,14 @@
                     <input type="number" name="hours" class="form-control" id="hours" placeholder="Number of Hours">
                 </div>
                 <div class="card-body">
-                    <button style="float: right;" class="btn btn-outline-primary" type="submit">Update</button>
+                    <button style="float: right;" class="btn btn-outline-primary">Update</button>
                 </div>
-            </form>
             </div>
-           
+        </form>
         </div>
     </div>
 </div>
+
+
 
 {% endblock content %}
