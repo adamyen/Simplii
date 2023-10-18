@@ -83,6 +83,15 @@ ER Diagram                 |  Application Flowchart
 - **Visualization Of Tasks**
 <img src="https://raw.githubusercontent.com/adamyen/Simplii/main/docs/Phase%203/Task%20Visualization.png" width="1000"/>
 
+## Phase 4 Works:
+- **Initial Home Page**
+  By default, the home page used to redirect to Jessica Holds 
+<img src = "![image](https://github.com/Prathmesh2498/Simplii/assets/51577440/b172a479-92ba-4daf-bcd8-59d8ec14fac8)" width = "1000"/>
+
+- **Updated Home Page**
+  Now the home page directs to the current logged in user
+<img src = "![image](https://github.com/Prathmesh2498/Simplii/assets/51577440/e43159c7-d22e-4e22-aa60-8a2d194f5cf7)" width = "1000"/>
+
 ## Getting started:
 
   - ### Prerequisite:
@@ -183,14 +192,10 @@ Please refer to the [Contributing.md](https://github.com/Himanshuu-Gupta/Simplii
 <center>
   <table>
   <tr>
-    <td align="center"><a href="https://github.com/m-payal"><img src="![image](https://github.com/Prathmesh2498/Simplii/assets/51577440/89aaee2a-a6b3-4d86-a751-69640f8169cc)
-" width="100px;" alt=""/><br /><sub><b>Payal Mehta</b></sub></a></td>
-    <td align="center"><a href="https://github.com/Prathmesh2498"><img src="![image](https://github.com/Prathmesh2498/Simplii/assets/51577440/cded25ca-1215-4ddc-8b4e-838a663da115)
-" width="100px;" alt=""/><br /><sub><b>Prathmesh Deshpande</b></sub></a></td>
-    <td align="center"><a href="https://github.com/sshrutii"><img src="![image](https://github.com/Prathmesh2498/Simplii/assets/51577440/35aae40f-89b7-45b5-bb33-4914926242d8)
-" width="100px;" alt=""/><br /><sub><b>Shruti Yadav</b></sub></a></td>
-    <td align="center"><a href="https://github.com/sumedh-git"><img src="![image](https://github.com/Prathmesh2498/Simplii/assets/51577440/f77b0a0c-5920-4598-a8e9-f341d7831721)
-" width="100px;" alt=""/><br /><sub><b>Sumedh Limurkar</b></sub></a></td>
+    <td align="center"><a href="https://github.com/m-payal"><img src="https://avatars.githubusercontent.com/u/51577440?v=4" width="100px;" alt=""/><br /><sub><b>Payal Mehta</b></sub></a></td>
+    <td align="center"><a href="https://github.com/Prathmesh2498"><img src="https://avatars.githubusercontent.com/u/46598699?v=4" width="100px;" alt=""/><br /><sub><b>Prathmesh Deshpande</b></sub></a></td>
+    <td align="center"><a href="https://github.com/sshrutii"><img src="https://avatars.githubusercontent.com/u/58786334?v=4" width="100px;" alt=""/><br /><sub><b>Shruti Yadav</b></sub></a></td>
+    <td align="center"><a href="https://github.com/sumedh-git"><img src="https://avatars.githubusercontent.com/u/58886133?v=4" width="100px;" alt=""/><br /><sub><b>Sumedh Limurkar</b></sub></a></td>
   </tr>
 </table>
 </center>
