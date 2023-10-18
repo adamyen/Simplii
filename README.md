@@ -86,11 +86,11 @@ ER Diagram                 |  Application Flowchart
 ## Phase 4 Works:
 - **Initial Home Page**
   By default, the home page used to redirect to Jessica Holds 
-<img src = "![image](https://github.com/Prathmesh2498/Simplii/assets/51577440/b172a479-92ba-4daf-bcd8-59d8ec14fac8)" width = "1000"/>
+<img src = "https://github.com/Prathmesh2498/Simplii/blob/m-payal-update-README-2/docs/Phase%204/Old%20login%20session.png" width = "1000"/>
 
 - **Updated Home Page**
   Now the home page directs to the current logged in user
-<img src = "![image](https://github.com/Prathmesh2498/Simplii/assets/51577440/e43159c7-d22e-4e22-aa60-8a2d194f5cf7)" width = "1000"/>
+<img src = "https://github.com/Prathmesh2498/Simplii/blob/m-payal-update-README-2/docs/Phase%204/New%20login%20session.png" width = "1000"/>
 
 ## Getting started:
 
@@ -171,10 +171,10 @@ This project is licensed under the terms of the MIT license. Please check [Licen
 - [x] Implemented e-mail notification system
 
 ## Phase 4:
-- [x] User session management fixed
-- [x] Fixed update tasks form
-- [x] Sub-tasks check list within a task
-- [x] Working of Delete task button
+- [x] User session management implemented
+- [x] Implemented edit tak operation
+- [x] Implemented Sub-tasks feature
+- [x] Added Delete operation in backend for delete button
 - [x] Fixed tasks tables: mapped with correct values
 
  
